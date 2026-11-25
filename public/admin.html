@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Arama motorları bu sayfayı listelemesin -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Yönetim | Gezi Günlüğüm</title>
+    <script>
+      try { var t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.tema = t; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="menu" id="menu"></header>
+
+    <section class="sayfa-baslik">
+      <p class="yol"><a href="index.html">Ana sayfa</a> <span>/</span> Yönetim</p>
+      <h2>Yönetim paneli 🔐</h2>
+    </section>
+
+    <main class="admin">
+      <!-- 1) GİRİŞ: şifre sorulur -->
+      <form class="yorum-formu admin-giris" id="giris-formu">
+        <input type="password" name="sifre" placeholder="Admin şifresi" required autocomplete="current-password" />
+        <div class="yorum-alt">
+          <p class="yorum-mesaj" id="giris-mesaj"></p>
+          <button type="submit" class="buton">Giriş <i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+      </form>
+
+      <!-- 2) PANEL: giriş yapınca görünür -->
+      <div id="panel" hidden>
+        <div class="admin-ust">
+          <p>Hoş geldin! 👋</p>
+          <button class="buton cam" id="cikis">Çıkış <i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
+
+        <h2 class="bolum-baslik">Mesajlar <span id="mesaj-sayisi"></span></h2>
+        <ul class="yorum-listesi" id="mesaj-listesi"></ul>
+
+        <h2 class="bolum-baslik">Yorumlar <span id="yorum-sayisi"></span></h2>
+        <ul class="yorum-listesi" id="yorum-listesi"></ul>
+      </div>
+    </main>
+
+    <footer class="alt-bilgi" id="alt-bilgi"></footer>
+
+    <script src="veri.js"></script>
+    <script src="ortak.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

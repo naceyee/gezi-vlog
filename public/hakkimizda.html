@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biz Kimiz | Gezi Günlüğüm</title>
+    <script>
+      try { var t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.tema = t; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="menu" id="menu"></header>
+
+    <section class="sayfa-baslik">
+      <p class="yol"><a href="index.html">Ana sayfa</a> <span>/</span> Biz Kimiz</p>
+      <h2>Merhaba, biz geldik 👋</h2>
+    </section>
+
+    <main>
+      <!-- TANITIM: metinleri ve fotoğrafı kendine göre değiştir -->
+      <section class="tanitim">
+        <!-- Kendi fotoğrafını img/biz.jpg adıyla kaydet, burada görünür -->
+        <div class="gorsel tanitim-foto" data-emoji="🧳" style="--ton: 20">
+          <img src="img/biz.jpg" alt="Biz" onerror="this.remove()" />
+        </div>
+        <div class="tanitim-metin">
+          <p class="giris">
+            Yeni yerler görmeyi, yollarda kaybolmayı ve gördüklerimizi
+            anlatmayı seviyoruz.
+          </p>
+          <p>
+            Bu siteyi gittiğimiz ülkelerden notlarımızı, fotoğraflarımızı ve
+            videolarımızı tek bir yerde toplamak için kurduk. Burada hem
+            gezi hikâyelerimizi hem de bir sonraki rotanı planlarken işine
+            yarayacak pratik bilgileri bulabilirsin.
+          </p>
+          <p>
+            Bu metni kendi hikâyenle değiştirmeyi unutma: kimsiniz, ne zamandan
+            beri geziyorsunuz, nasıl seyahat etmeyi seviyorsunuz?
+          </p>
+          <div id="sayilar" class="sayilar sayilar-sol"></div>
+        </div>
+      </section>
+
+      <!-- İLETİŞİM -->
+      <section class="iletisim" id="iletisim">
+        <h2 class="bolum-baslik">İletişim</h2>
+        <p>
+          Soruların, iş birliği teklifin ya da sadece bir merhaban mı var?
+          Bize yazmaktan çekinme.
+        </p>
+        <div id="iletisim-linkleri" class="iletisim-linkleri"></div>
+
+        <!-- İLETİŞİM FORMU: mesajlar sunucudaki deftere kaydedilir -->
+        <form class="yorum-formu iletisim-formu" id="iletisim-formu">
+          <div class="iki-sutun">
+            <input type="text" name="isim" placeholder="Adın" maxlength="50" required />
+            <input type="email" name="eposta" placeholder="E-posta adresin" maxlength="100" required />
+          </div>
+          <textarea name="mesaj" rows="5" placeholder="Mesajın…" maxlength="3000" required></textarea>
+          <div class="yorum-alt">
+            <p class="yorum-mesaj" id="iletisim-mesaj"></p>
+            <button type="submit" class="buton">Gönder <i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="alt-bilgi" id="alt-bilgi"></footer>
+
+    <script src="veri.js"></script>
+    <script src="ortak.js"></script>
+    <script src="hakkimizda.js"></script>
+  </body>
+</html>

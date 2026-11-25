@@ -1,0 +1,13 @@
+# Kurulan paketler (npm install ile tekrar kurulur)
+node_modules/
+
+# Gizli ayarlar (admin şifresi)
+.env
+
+# Veritabanı (yorumlar ve mesajlar)
+gezi.db
+
+# Kişisel belgeler (staj defteri: adres, telefon, öğrenci no)
+*.doc
+*.docx
+~$*

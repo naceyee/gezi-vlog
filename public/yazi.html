@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gezi Günlüğüm</title>
+    <script>
+      try { var t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.tema = t; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="yazi-sayfasi kapakli">
+    <!-- Okuma ilerleme çubuğu -->
+    <div class="ilerleme" id="ilerleme"></div>
+
+    <header class="menu" id="menu"></header>
+
+    <!-- Yazının kapak alanı -->
+    <section class="yazi-kapak" id="yazi-kapak"></section>
+
+    <main>
+      <article id="yazi-alani"></article>
+
+      <!-- YORUMLAR (yazı bulunursa yazi.js görünür yapar) -->
+      <section class="yorumlar" id="yorumlar" hidden>
+        <h2 class="bolum-baslik">Yorumlar <span id="yorum-sayisi"></span></h2>
+
+        <form class="yorum-formu" id="yorum-formu">
+          <input type="text" name="isim" placeholder="Adın" maxlength="50" required />
+          <textarea name="yorum" rows="4" placeholder="Yorumunu yaz…" maxlength="1000" required></textarea>
+          <div class="yorum-alt">
+            <p class="yorum-mesaj" id="yorum-mesaj"></p>
+            <button type="submit" class="buton">Gönder <i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+
+        <ul class="yorum-listesi" id="yorum-listesi"></ul>
+      </section>
+
+      <section id="diger-yazilar"></section>
+    </main>
+
+    <!-- Fotoğraf büyütme penceresi -->
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lb-kapat" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+      <button class="lb-ok lb-onceki" aria-label="Önceki"><i class="fa-solid fa-chevron-left"></i></button>
+      <figure>
+        <img alt="" />
+        <figcaption></figcaption>
+      </figure>
+      <button class="lb-ok lb-sonraki" aria-label="Sonraki"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <footer class="alt-bilgi" id="alt-bilgi"></footer>
+
+    <script src="veri.js"></script>
+    <script src="ortak.js"></script>
+    <script src="yazi.js"></script>
+  </body>
+</html>
